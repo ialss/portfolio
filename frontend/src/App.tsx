@@ -1,25 +1,29 @@
 
 
 import './App.css'
+import ContactForm from './contact';
+
 
 function Main() {
+    console.log("Hello from my code!");
+
     return (
-        <>
+        
 
-            <body className="bg-bgGreen relative min-h-screen px-8 py-8">
+            <div className="bg-bgGreen h-full w-full px-8 py-8">
 
-                <div>
+                <div className=" w-full min-h-screen ">
                     <div className=" flex flex-col lg:block justify-center">
                         <div className="realtive">
                             <div>
 
-                                <h1 className=" text-center lg:text-left text-6xl md:text-8xl font-garamond text-txtGreen  font-thin">Hi there! I'm Klaidas Wikar</h1>
+                                <h1 className=" lg:clamp-heading lg:whitespace-nowrap text-center lg:text-left text-6xl md:text-8xl font-garamond text-txtGreen  font-thin">Hi there! I'm Klaidas Wikar</h1>
 
                             </div>
 
 
-                            <div className="absolute left-7/13">
-                                <p className="hidden lg:block font-garamond italic text-lightTxtGreen text-2xl relative -top-4  ">/'klye-dahs vee-kar/</p>
+                            <div className="absolute left-13/27">
+                                <h3 className="hidden lg:block font-garamond italic text-lightTxtGreen text-2xl relative -top-4  ">/'klye-dahs vee-kar/</h3>
                             </div>
 
                         </div>
@@ -35,7 +39,7 @@ function Main() {
                         <div className="mt-8 p-4 lg:pr-90">
 
                             <p className="text-center lg:text-left font-garamond text-txtGreen text-2xl "> Currently I'm involved in Northeastern Electric Racing and AerospaceNU on Project Horizon.
-                                I used to work at United Postal Service as a package handeler and Friends & Family of Nabeela Syed as a field representative.
+                                I used to work at United Parcel Service as a package handeler and Friends & Family of Nabeela Syed as a field representative.
                                 I've used many different languages and technologies, some of the more common ones include C/C++, Python, Java, JS/TSX, Docker, and Pytorch.
                                 You can find a full list on my resume or in the projects section. </p>
                             <p className="text-center lg:text-left font-garamond text-txtGreen text-2xl mt-10 max-w-3xl">I'm huge on urbanism and public transit,
@@ -55,14 +59,16 @@ function Main() {
                         </div>
 
 
-                        <div className="flex lg:absolute space-x-8 mt-8 justify-center items-center">
+                        <div className="sticky top-0">
+                        <div className="flex bottom-4 space-x-8 mt-8 lg:mt-25 justify-center lg:justify-normal items-center">
 
-                            <h2 className="font-garamond text-txtGreen font-bold text-lg">Projects</h2>
+                            <h3 className="font-garamond text-txtGreen font-bold text-lg">Projects</h3>
 
-                            <h2 className="font-garamond text-txtGreen font-bold text-lg">Connect</h2>
+                            <h3 className="font-garamond text-txtGreen font-bold text-lg">Connect</h3>
 
-                            <h2 className="font-garamond text-txtGreen font-bold text-lg">Resume</h2>
+                            <h3 className="font-garamond text-txtGreen font-bold text-lg">Resume</h3>
 
+                        </div>
                         </div>
                     </div>
 
@@ -77,12 +83,17 @@ function Main() {
 
 
                 </div>
+                
+                <div className="ml-auto mr-auto max-w-fit">
+                     <ContactForm />
+                     
+
+                </div>
 
 
-            </body>
+            </div>
 
 
-        </>
     )
 }
 
