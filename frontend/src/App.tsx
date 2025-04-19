@@ -1,11 +1,30 @@
 
 
 import './App.css'
+
 import ContactForm from './contact';
+
+import ProjectCard from './ProjectCard';
+
+import { Project } from './ProjectCard';
 
 
 function Main() {
-    console.log("Hello from my code!");
+    
+
+const projects: Project[] = [
+    {
+    icon: "src/assets/computer_chip.png",
+    title: "Packet Generator",
+    date: "March 2025",
+    blurb: "A few simples programs that simulate server to client communcation",
+    tech: ["python", "TCP", "wireshark", "CLI"],
+    link: "www.yourmom.com",
+}
+
+
+];
+
 
     return (
         
@@ -60,7 +79,7 @@ function Main() {
 
 
                         <div className="sticky top-0">
-                        <div className="flex bottom-4 space-x-8 mt-8 lg:mt-25 justify-center lg:justify-normal items-center">
+                        <div className="flex bottom-4 space-x-8 mt-8 lg:mt-25 justify-center lg:justify-normal items-center mb-5 lg:mb-0">
 
                             <h3 className="font-garamond text-txtGreen font-bold text-lg">Projects</h3>
 
@@ -83,11 +102,17 @@ function Main() {
 
 
                 </div>
-                
-                <div className="ml-auto mr-auto max-w-fit">
-                     <ContactForm />
-                     
 
+                <div className="flex justify-center">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 place-items-center">
+        {projects.map((project, idx) => (
+            <ProjectCard key={idx} project={project} />
+        ))}
+    </div>
+</div>
+                
+                <div className="ml-auto mr-auto max-w-fit ">
+                     <ContactForm />
                 </div>
 
 

@@ -12,10 +12,11 @@ function ContactForm() {
 
 
 
-    const handleInputChange = (setter: React.Dispatch<React.SetStateAction<string>>) =>
-        (event: React.ChangeEvent<HTMLInputElement>) => {
-            setter(event.target.value);
-        };
+    const handleInputChange = <T extends HTMLInputElement | HTMLTextAreaElement>(
+        setter: React.Dispatch<React.SetStateAction<string>>
+    ) => (event: React.ChangeEvent<T>) => {
+        setter(event.target.value);
+    };
 
 
     return (
@@ -55,32 +56,32 @@ function ContactForm() {
 
                 </div>
                 <div>
-                        <label htmlFor="last-name" className="block text-sm font-medium text-txtGreen mb-1">Email</label>
-                        <input
-                            type="text"
-                            id="last-name"
-                            name="last-name"
-                            value={email}
-                            onChange={handleInputChange(setEmail)}
-                            required
-                            className="text-txtGreen w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm  transition duration-150 ease-in-out"
-                        />
-                    </div>
+                    <label htmlFor="last-name" className="block text-sm font-medium text-txtGreen mb-1">Email</label>
+                    <input
+                        type="text"
+                        id="last-name"
+                        name="last-name"
+                        value={email}
+                        onChange={handleInputChange(setEmail)}
+                        required
+                        className="text-txtGreen w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm  transition duration-150 ease-in-out"
+                    />
+                </div>
 
-                    <div>
-            <label htmlFor="message" className="block text-sm font-medium text-txtGreen mb-1 ">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              value={message} 
-              onChange={handleInputChange(setMessage)} 
-              required
-              className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm transition duration-150 ease-in-out resize-none text-txtGreen"
-            ></textarea>
-            </div>
+                <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-txtGreen mb-1 ">
+                        Message
+                    </label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows={5}
+                        value={message}
+                        onChange={handleInputChange(setMessage)}
+                        required
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm transition duration-150 ease-in-out resize-none text-txtGreen"
+                    ></textarea>
+                </div>
             </form>
         </div>
 
