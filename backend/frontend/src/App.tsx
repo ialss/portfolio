@@ -14,7 +14,7 @@ function Main() {
 
     const projects: Project[] = [
         {
-            icon: "src/assets/computer_chip.png",
+            icon: "/computer_chip.png",
             title: "Packet Generator",
             date: "March 2025",
             blurb: "A few simples programs that simulate server to client communcation",
@@ -101,7 +101,7 @@ function Main() {
                 <div className=" hidden lg:block absolute bottom-4 right-4 w-1/3 ">
 
                     <img
-                        src="src/assets/computer_chip.png"
+                        src="/assets/computer_chip.png"
                         className="w-full h-auto object-cover block"
                         alt="Stylized computer chip"
                     />
