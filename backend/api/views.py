@@ -4,8 +4,7 @@ from rest_framework import status
 from .models import Contact
 
 
-from .pLib import contactSeralizer
-import re
+from .pLib import contactSerializer
 
 from django.core.mail import EmailMessage
 
@@ -13,13 +12,13 @@ from django.core.mail import EmailMessage
 @api_view(["GET"])
 def get_contact(request):
     contacts = Contact.objects.all()
-    seralizer = contactSeralizer(contacts, many = True)
+    seralizer = contactSerializer(contacts, many = True)
     return Response(seralizer.data)
 
 @api_view(["POST"])
 def post_contact(request):
     data = request.data
-    seralizer = contactSeralizer(data = data)
+    seralizer = contactSerializer(data = data)
     if(seralizer.is_valid()):
         seralizer.save()
         
@@ -28,11 +27,6 @@ def post_contact(request):
         email = data.get('email', '')
         message = data.get('message', '')
         
-        
-        
-        if( not re.match(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$', email)):
-            return Response(email, status = status.HTTP_400_BAD_REQUEST)
-            
         
         email_message = EmailMessage(
             subject=f"New Message from {first_name} {last_name}",
