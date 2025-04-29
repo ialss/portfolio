@@ -16,7 +16,7 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 from django.shortcuts import render
 
 
@@ -28,5 +28,7 @@ def index_view(request):
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", index_view, name="index"),
+     path("api/", include("api.urls"))
+    
     
 ]

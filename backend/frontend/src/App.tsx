@@ -1,4 +1,4 @@
-
+import { useState } from "react"
 
 import './App.css'
 
@@ -11,10 +11,23 @@ import { Project } from './ProjectCard';
 
 function Main() {
 
+    const [contact, setContact] = useState([]);
+
+    //const [projects2, setProjects] = useState([]);
+
+    /*
+    const fetchProjects = async () => {
+        try {
+
+        } catch(err) {
+            console.log(err);
+        }
+    };
+*/
 
     const projects: Project[] = [
         {
-            icon: "/computer_chip.png",
+            icon: "/assets/computer_chip.png",
             title: "Packet Generator",
             date: "March 2025",
             blurb: "A few simples programs that simulate server to client communcation",
