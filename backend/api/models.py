@@ -4,7 +4,7 @@ from django.core.validators import RegexValidator
 
 name_validator = RegexValidator(
     regex=r"^[A-Za-zÀ-ÿ' -]+$",
-    message="Name must contain only letters, spaces, hyphens, or apostrophes."
+    message="Invalid characters used."
 )
 
 class Contact(models.Model):

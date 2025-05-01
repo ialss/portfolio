@@ -7,7 +7,7 @@ function ContactForm() {
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
-
+    const [errors, setErrors] = useState<{ [key: string]: string[] }>({});
 
 
 
@@ -16,29 +16,42 @@ function ContactForm() {
         setter: React.Dispatch<React.SetStateAction<string>>
     ) => (event: React.ChangeEvent<T>) => {
         setter(event.target.value);
+    
+        const fieldName = event.target.name;
+        setErrors(prevErrors => {
+            const newErrors = { ...prevErrors };
+            delete newErrors[fieldName]; 
+            return newErrors;
+        });
     };
 
     const postContact = async () => {
         const contactData = {
-            firstName, 
-            lastName, 
+            firstName,
+            lastName,
             email,
             message
         };
-        try{
-        const response = await fetch("http://127.0.0.1:8000/api/contacts/post/", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(contactData),
-        }) ;
+        try {
+            const response = await fetch("http://127.0.0.1:8000/api/contacts/post/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(contactData),
+            });
 
-        const data = await response.json()
-        console.log(data)
-    } catch(err) {
-        console.log(err)
-    }
+            const data = await response.json()
+
+            if (!response.ok) {
+                setErrors(data);
+            } else {
+                setErrors({});
+            }
+
+        } catch (err) {
+            console.log(err)
+        }
 
     };
 
@@ -56,24 +69,35 @@ function ContactForm() {
                         <input
                             type="text"
                             id="first-name"
-                            name="first-name"
+                            name="firstName"
                             value={firstName}
                             onChange={handleInputChange(setFirstName)}
                             required
                             className="text-txtGreen w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm"
                         />
+                        <div className = "h-4">
+                    {errors.firstName && errors.firstName.map((msg, i) => (
+                        <label key={i} className="text-red-500 text-sm ml-0.5">{msg}</label>
+                    ))}
                     </div>
+                    </div>
+                
                     <div>
                         <label htmlFor="last-name" className="block text-sm font-medium text-txtGreen mb-1">Last Name</label>
                         <input
                             type="text"
                             id="last-name"
-                            name="last-name"
+                            name="lastName"
                             value={lastName}
                             onChange={handleInputChange(setLastName)}
                             required
                             className="text-txtGreen w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm"
                         />
+                        <div className = "h-4">
+                    {errors.lastName && errors.lastName.map((msg, i) => (
+                        <label key={i} className="text-red-500 text-sm ml-0.5">{msg}</label>
+                    ))}
+                    </div>
                     </div>
 
 
@@ -90,6 +114,12 @@ function ContactForm() {
                         required
                         className="text-txtGreen w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm"
                     />
+                    <div className = "h-4">
+                    {errors.email && errors.email.map((msg, i) => (
+                        <label key={i} className="text-red-500 text-sm ml-0.5">{msg}</label>
+                    ))}
+                    </div>
+
                 </div>
 
                 <div>
@@ -107,8 +137,8 @@ function ContactForm() {
                     ></textarea>
                 </div>
 
-                <button type="submit" className=" block mx-auto text-txtGreen w-fit px-10 py-2 border border-gray-300 rounded-md shadow-sm hover:bg-gray-200 outline">Send</button>          
-                  </form>
+                <button type="submit" className=" block mx-auto text-txtGreen w-fit px-10 py-2 border border-gray-300 rounded-md shadow-sm hover:bg-gray-200 outline">Send</button>
+            </form>
         </div>
 
 

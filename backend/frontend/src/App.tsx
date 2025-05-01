@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 import './App.css'
 
 import ContactForm from './contact';
@@ -11,19 +9,7 @@ import { Project } from './ProjectCard';
 
 function Main() {
 
-    const [contact, setContact] = useState([]);
-
-    //const [projects2, setProjects] = useState([]);
-
-    /*
-    const fetchProjects = async () => {
-        try {
-
-        } catch(err) {
-            console.log(err);
-        }
-    };
-*/
+      
 
     const projects: Project[] = [
         {
