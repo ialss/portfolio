@@ -7,7 +7,7 @@
 
 
 
-@theme{
+@theme {
     --color-bgGreen: #e0e2d6;
     --color-txtGreen: #333d29;
     --color-lightTxtGreen: #a4ac86;
@@ -19,21 +19,21 @@ html {
 }
 
 :root {
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  min-width: 320px;
-  min-height: 100vh;
+    min-width: 320px;
+    min-height: 100vh;
 }
 
-a{
+a {
     cursor: pointer;
 }
 
-button{
+button {
     cursor: pointer;
 }

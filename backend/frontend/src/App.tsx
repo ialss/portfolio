@@ -12,8 +12,8 @@ function Main() {
 
     const [projects, setProjects] = useState<Project[]>([]);
 
-      
-    useEffect(() =>{
+
+    useEffect(() => {
         fetchProjects();
     }, []);
 
@@ -23,12 +23,12 @@ function Main() {
             const response = await fetch("http://127.0.0.1:8000/api/projects/")
             const data = await response.json();
             setProjects(data);
-        } catch(err){
+        } catch (err) {
             console.log(err);
         }
     };
 
-   
+
 
 
     return (
@@ -87,7 +87,7 @@ function Main() {
                 </div>
 
                 <div className="">
-                <div className="flex bottom-4 space-x-8 mt-8 lg:mt-40 justify-center lg:justify-normal items-center mb-5 lg:mb-0">
+                    <div className="flex bottom-4 space-x-8 mt-8 lg:mt-40 justify-center lg:justify-normal items-center mb-5 lg:mb-0">
 
                         <a href="#projects" className="font-garamond text-txtGreen font-bold text-lg">Projects</a>
 
@@ -101,7 +101,7 @@ function Main() {
                     </div>
                 </div>
 
-                
+
 
                 <div className=" hidden lg:block absolute bottom-4 right-4 w-1/3 ">
 
@@ -115,10 +115,10 @@ function Main() {
 
             </div>
 
-         
+
 
             <div id="projects" className="flex justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 place-items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 ">
                     {projects.map((project, idx) => (
                         <ProjectCard key={idx} project={project} />
                     ))}

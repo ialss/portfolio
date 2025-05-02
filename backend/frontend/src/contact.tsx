@@ -16,11 +16,11 @@ function ContactForm() {
         setter: React.Dispatch<React.SetStateAction<string>>
     ) => (event: React.ChangeEvent<T>) => {
         setter(event.target.value);
-    
+
         const fieldName = event.target.name;
         setErrors(prevErrors => {
             const newErrors = { ...prevErrors };
-            delete newErrors[fieldName]; 
+            delete newErrors[fieldName];
             return newErrors;
         });
     };
@@ -75,13 +75,13 @@ function ContactForm() {
                             required
                             className="text-txtGreen w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm"
                         />
-                        <div className = "h-4">
-                    {errors.firstName && errors.firstName.map((msg, i) => (
-                        <label key={i} className="text-red-500 text-sm ml-0.5">{msg}</label>
-                    ))}
+                        <div className="h-4">
+                            {errors.firstName && errors.firstName.map((msg, i) => (
+                                <label key={i} className="text-red-500 text-sm ml-0.5">{msg}</label>
+                            ))}
+                        </div>
                     </div>
-                    </div>
-                
+
                     <div>
                         <label htmlFor="last-name" className="block text-sm font-medium text-txtGreen mb-1">Last Name</label>
                         <input
@@ -93,11 +93,11 @@ function ContactForm() {
                             required
                             className="text-txtGreen w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm"
                         />
-                        <div className = "h-4">
-                    {errors.lastName && errors.lastName.map((msg, i) => (
-                        <label key={i} className="text-red-500 text-sm ml-0.5">{msg}</label>
-                    ))}
-                    </div>
+                        <div className="h-4">
+                            {errors.lastName && errors.lastName.map((msg, i) => (
+                                <label key={i} className="text-red-500 text-sm ml-0.5">{msg}</label>
+                            ))}
+                        </div>
                     </div>
 
 
@@ -114,10 +114,10 @@ function ContactForm() {
                         required
                         className="text-txtGreen w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm"
                     />
-                    <div className = "h-4">
-                    {errors.email && errors.email.map((msg, i) => (
-                        <label key={i} className="text-red-500 text-sm ml-0.5">{msg}</label>
-                    ))}
+                    <div className="h-4">
+                        {errors.email && errors.email.map((msg, i) => (
+                            <label key={i} className="text-red-500 text-sm ml-0.5">{msg}</label>
+                        ))}
                     </div>
 
                 </div>

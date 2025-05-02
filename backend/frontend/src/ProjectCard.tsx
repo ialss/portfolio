@@ -26,12 +26,12 @@ function ProjectCard({ project }: ProjectProps) {
         <a href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="">
+            className="block h-full">
 
-            <div className="bg-white/50 p-8 rounded-lg shadow-lg w-full max-w-lg justify-center">
+            <div className="bg-white/50 p-8 rounded-lg shadow-lg w-full justify-center">
 
                 <div className="flex ">
-                    <img src = {`http://127.0.0.1:8000${icon}`} className="w-20 h-20 "></img>
+                    <img src={`http://127.0.0.1:8000${icon}`} className="w-20 h-20 "></img>
 
                     <div className="ml-5">
 

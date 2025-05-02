@@ -9,7 +9,7 @@ import Main from './App.tsx'
 
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <Main />
-  </StrictMode>,
+    <StrictMode>
+        <Main />
+    </StrictMode>,
 )

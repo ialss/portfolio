@@ -7,7 +7,7 @@ h1 {
     font-size: clamp(4rem, 5vw + 1rem, 15rem)
 }
 
-h2{
+h2 {
     font-size: clamp(2rem, 2vw + 0.2rem, 1.875rem)
 }
 
@@ -20,4 +20,4 @@ p {
 img {
     image-rendering: pixelated;
     image-rendering: crisp-edges;
-  }
+}

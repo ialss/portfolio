@@ -45,6 +45,7 @@ def post_contact(request):
     
 @api_view(["GET"])
 def get_projects(request):
+    
     projects = Projects.objects.all()
     seralizer = projectsSerializer(projects, many = True)
     return Response(seralizer.data, status = status.HTTP_200_OK)
@@ -53,12 +54,14 @@ def get_projects(request):
 @api_view(["POST"])
 @parser_classes([MultiPartParser, FormParser])
 def post_project(request):
+    
     data = request.data
     seralizer = projectsSerializer(data = data)
-    if(seralizer.is_valid()):
-        seralizer.save()
-        
     
+    if(seralizer.is_valid()):
+        
+        seralizer.save()
         return Response(seralizer.data, status = status.HTTP_201_CREATED)
+    
     return Response(seralizer.errors, status = status.HTTP_400_BAD_REQUEST)
         
