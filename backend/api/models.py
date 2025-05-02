@@ -15,4 +15,15 @@ class Contact(models.Model):
     dateSent = models.DateTimeField(auto_now_add=True)
     
     def _str_(self):
-        return self.firstName, self.lastName, self.email, self.message, self.dataSentx
+        return self.firstName, self.lastName, self.email, self.message, self.dataSent
+    
+class Projects(models.Model):
+    title = models.CharField(max_length = 25)
+    date = models.CharField(max_length = 30)
+    blurb = models.TextField(default=" ")
+    link = models.URLField()
+    icon = models.ImageField(upload_to="icons")
+    tech = models.JSONField(default=list)
+    
+    def _str_(self):
+        return self.title, self.date, self.blurb, self.link, self.icon, self.tech

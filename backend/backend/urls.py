@@ -18,6 +18,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from django.shortcuts import render
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 def index_view(request):
@@ -28,7 +30,10 @@ def index_view(request):
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", index_view, name="index"),
-     path("api/", include("api.urls"))
+    path("api/", include("api.urls"))
     
     
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

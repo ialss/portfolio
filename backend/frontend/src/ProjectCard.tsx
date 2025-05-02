@@ -20,6 +20,7 @@ function ProjectCard({ project }: ProjectProps) {
 
     const { icon, title, date, blurb, tech, link } = project;
 
+
     return (
 
         <a href={link}
@@ -30,7 +31,7 @@ function ProjectCard({ project }: ProjectProps) {
             <div className="bg-white/50 p-8 rounded-lg shadow-lg w-full max-w-lg justify-center">
 
                 <div className="flex ">
-                    <img src={icon} className="w-20 h-20 "></img>
+                    <img src = {`http://127.0.0.1:8000${icon}`} className="w-20 h-20 "></img>
 
                     <div className="ml-5">
 

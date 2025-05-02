@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import './App.css'
 
 import ContactForm from './contact';
@@ -9,20 +10,25 @@ import { Project } from './ProjectCard';
 
 function Main() {
 
+    const [projects, setProjects] = useState<Project[]>([]);
+
       
+    useEffect(() =>{
+        fetchProjects();
+    }, []);
 
-    const projects: Project[] = [
-        {
-            icon: "/assets/computer_chip.png",
-            title: "Packet Generator",
-            date: "March 2025",
-            blurb: "A few simples programs that simulate server to client communcation",
-            tech: ["python", "TCP", "wireshark", "CLI"],
-            link: "www.yourmom.com",
+
+    const fetchProjects = async () => {
+        try {
+            const response = await fetch("http://127.0.0.1:8000/api/projects/")
+            const data = await response.json();
+            setProjects(data);
+        } catch(err){
+            console.log(err);
         }
+    };
 
-
-    ];
+   
 
 
     return (
@@ -100,7 +106,7 @@ function Main() {
                 <div className=" hidden lg:block absolute bottom-4 right-4 w-1/3 ">
 
                     <img
-                        src="/assets/computer_chip.png"
+                        src="http://127.0.0.1:8000/images/icons/computer_chip.png"
                         className="w-full h-auto object-cover block"
                         alt="Stylized computer chip"
                     />
