@@ -56,11 +56,18 @@ function ContactForm() {
     };
 
 
+    const copytoCB = async () => {
+        await navigator.clipboard.writeText("klaidaswik@gmail.com");
+        alert("Email copied to clipboard!")
+    }
+
+
+
     return (
 
         <div className="bg-white/50 p-8 rounded-lg shadow-lg w-full max-w-lg justify-center">
 
-            <h3 className=" text-2xl text-txtGreen text-center mb-5">Contact me via this form or at klaidaswik@gmail.com</h3>
+            <h3 className=" text-2xl text-txtGreen text-center mb-5 ">Contact me via this form or at <button onClick={copytoCB} className="underline font-bold hover:text-green-700">klaidaswik@gmail.com</button></h3>
 
             <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); postContact(); }}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">

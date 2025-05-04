@@ -28,9 +28,6 @@ function Main() {
         }
     };
 
-
-
-
     return (
 
 
@@ -127,6 +124,28 @@ function Main() {
 
             <div id="connect" className="ml-auto mr-auto max-w-fit ">
                 <ContactForm />
+            </div>
+
+            <div className="flex justify-center mt-10 gap-5">
+                <a href="https://github.com/ialss"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    <img
+                        src="http://127.0.0.1:8000/images/github.svg"
+                        className=""
+                        alt="Github logo"
+                    />
+                </a>
+                <a href="https://www.linkedin.com/in/klaidaswikar/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    <img
+                        src="http://127.0.0.1:8000/images/linkedin.svg"
+                        className=""
+                        alt="Linkedin logo"
+                    />
+                </a>
+
             </div>
 
 
