@@ -45,8 +45,10 @@ function ContactForm() {
 
             if (!response.ok) {
                 setErrors(data);
+                alert("Error sending email!")
             } else {
                 setErrors({});
+                alert("Email sent!")
             }
 
         } catch (err) {

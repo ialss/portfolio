@@ -67,7 +67,7 @@ function Main() {
                             so you might've seen me in a fourm or some of my wikipedia articles!
                             I also have three cats!! If you're looking for further information
                             you can find it via my <a
-                                href="src/assets/resume.pdf"
+                                href="/resume.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="underline font-bold hover:text-green-700"
@@ -90,7 +90,7 @@ function Main() {
 
                         <a href="#connect" className="font-garamond text-txtGreen font-bold text-lg">Connect</a>
 
-                        <a href="src/assets/resume.pdf"
+                        <a href="/resume.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="font-garamond text-txtGreen font-bold text-lg">Resume</a>
@@ -103,7 +103,7 @@ function Main() {
                 <div className=" hidden lg:block absolute bottom-4 right-4 w-1/3 ">
 
                     <img
-                        src="http://127.0.0.1:8000/images/icons/computer_chip.png"
+                        src="/images/icons/computer_chip.png"
                         className="w-full h-auto object-cover block"
                         alt="Stylized computer chip"
                     />
@@ -131,7 +131,7 @@ function Main() {
                     target="_blank"
                     rel="noopener noreferrer">
                     <img
-                        src="http://127.0.0.1:8000/images/github.svg"
+                        src="/images/github.svg"
                         className=""
                         alt="Github logo"
                     />
@@ -140,7 +140,7 @@ function Main() {
                     target="_blank"
                     rel="noopener noreferrer">
                     <img
-                        src="http://127.0.0.1:8000/images/linkedin.svg"
+                        src="/images/linkedin.svg"
                         className=""
                         alt="Linkedin logo"
                     />

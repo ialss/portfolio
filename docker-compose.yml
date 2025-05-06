@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    container_name: django-backend
+    command: gunicorn backend.wsgi:application --bind 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - ./backend/images:/app/images
+    env_file:
+      - ./backend/.env
+  nginx: 
+    build:
+      context: ./backend
+      dockerfile: ./nginx/Dockerfile
+    container_name: nginx
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+    volumes:
+      - ./backend/staticfiles:/app/staticfiles
+      - ./backend/images:/app/images
+
+
+volumes:
+  static_volume:
