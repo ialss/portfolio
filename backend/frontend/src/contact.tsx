@@ -33,7 +33,7 @@ function ContactForm() {
             message
         };
         try {
-            const response = await fetch("http://127.0.0.1:8000/api/contacts/post/", {
+            const response = await fetch("https://www.klaidasw.com/api/contacts/post/", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

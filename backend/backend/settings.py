@@ -142,7 +142,15 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = False
+
+CORS_ALLOWED_ORIGINS = [
+    "https://klaidasw.com",
+    "https://www.klaidasw.com",
+    "http://klaidasw.com",
+    "http://www.klaidasw.com",
+
+]
 
 #Media
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'images')

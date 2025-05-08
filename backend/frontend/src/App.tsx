@@ -20,7 +20,7 @@ function Main() {
 
     const fetchProjects = async () => {
         try {
-            const response = await fetch("http://127.0.0.1:8000/api/projects/")
+            const response = await fetch("https://www.klaidasw.com/api/projects/")
             const data = await response.json();
             setProjects(data);
         } catch (err) {
@@ -29,7 +29,6 @@ function Main() {
     };
 
     return (
-
 
         <div className=" bg-bgGreen h-full w-full px-8 py-8">
 

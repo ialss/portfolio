@@ -12,7 +12,7 @@ services:
       - ./backend/images:/app/images
     env_file:
       - ./backend/.env
-  nginx: 
+  nginx:
     build:
       context: ./backend
       dockerfile: ./nginx/Dockerfile
@@ -21,9 +21,11 @@ services:
       - backend
     ports:
       - "80:80"
+      - "443:443"
     volumes:
       - ./backend/staticfiles:/app/staticfiles
       - ./backend/images:/app/images
+      - /etc/letsencrypt:/etc/letsencrypt
 
 
 volumes:
