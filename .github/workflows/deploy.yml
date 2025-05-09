@@ -57,4 +57,13 @@ jobs:
           
     - name: Run collectstatic
       run: |
-        docker-compose exec -T web python manage.py collectstatic --noinput
+        for i in {1..10}; do
+          echo "Attempt $i: trying collectstatic..."
+          if docker-compose exec -T web python manage.py collectstatic --noinput; then
+            echo "collectstatic succeeded"
+            break
+          else
+          e  cho "collectstatic failed, retrying in 5 seconds..."
+            sleep 5
+          fi
+        done
