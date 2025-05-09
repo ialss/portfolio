@@ -52,6 +52,9 @@ jobs:
           docker compose down
           docker compose up -d --build
           
+    - name: Wait for the container to be ready
+      run: sleep 10
+          
     - name: Run collectstatic
       run: |
         docker-compose exec -T web python manage.py collectstatic --noinput
