@@ -18,4 +18,10 @@ export default defineConfig({
   optimizeDeps: {
     include: ['crypto-browserify'],
   },
+  server: {
+    proxy: {
+      '/images': 'http://127.0.0.1:8000',
+    },
+  }
+  
 })

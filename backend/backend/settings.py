@@ -25,11 +25,11 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("SECRET_KEY", default="NOT_USED")
+SECRET_KEY = env("SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool("DEBUG") == "True"
+DEBUG = True
 
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
 
@@ -150,7 +150,9 @@ CORS_ALLOWED_ORIGINS = [
     "https://www.klaidasw.com",
     "http://klaidasw.com",
     "http://www.klaidasw.com",
-
+    "http://127.0.0.1:8000",
+    "http://localhost:3000",
+    "http://localhost:5173",
 ]
 
 #Media
