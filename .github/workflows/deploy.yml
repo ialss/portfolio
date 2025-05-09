@@ -52,8 +52,6 @@ jobs:
           docker compose down
           docker compose up -d --build
           
-    - name: Wait for the container to be ready
-      run: sleep 10
       
     - name: Run collectstatic
       run: |
