@@ -20,8 +20,8 @@ jobs:
 
     - name: Build and push Docker images
       run: |
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/portfolio-backend ./backend
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/portfolio-frontend ./backend/frontend
+        docker build -f backend/Dockerfile -t ${{ secrets.DOCKER_USERNAME }}/portfolio-backend ./backend
+        docker build -f backend/nginx/Dockerfile -t ${{ secrets.DOCKER_USERNAME }}/portfolio-frontend ./backend/nginx
         docker push ${{ secrets.DOCKER_USERNAME }}/portfolio-backend
         docker push ${{ secrets.DOCKER_USERNAME }}/portfolio-frontend
 
