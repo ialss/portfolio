@@ -56,7 +56,8 @@ function Main() {
 
                     <div className="mt-8 p-4 lg:pr-90">
 
-                        <p className="text-center lg:text-left font-garamond text-txtGreen text-2xl "> I'm involved in Northeastern Electric Racing and AerospaceNU on Project Horizon.
+                        <p className="text-center lg:text-left font-garamond text-txtGreen text-2xl "> I'm involved in Northeastern Electric Racing 
+                            and AerospaceNU on Project Horizon (cubesat).
                             I used to work at United Parcel Service as a package handeler and Friends & Family of Nabeela Syed as a field representative.
                             I've used many different languages and technologies all across the software and hardware spectrum!
                             You can find a full list on my resume or in the projects section. </p>
@@ -73,7 +74,10 @@ function Main() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="underline font-bold hover:text-green-700"
-                            >Linkedin</a>. Please excuse the unfished state of this website! I've recently started summer school in the middle of working on this project so you may find issues with this website or project. I'm more than happy to talk about anything here or anything at all. You can do so via the contact form and email below. </p>
+                            >Linkedin</a>. Please excuse the unfished state of this website! 
+                            I've recently started summer school in the middle of working on this project so you may 
+                            find issues. If you want to chat about anything here or anything at all. 
+                            You can do so via the contact form and email below. </p>
 
                     </div>
 
