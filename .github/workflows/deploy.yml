@@ -54,16 +54,10 @@ jobs:
           
     - name: Wait for the container to be ready
       run: sleep 10
-          
+      
     - name: Run collectstatic
       run: |
         for i in {1..10}; do
           echo "Attempt $i: trying collectstatic..."
-          if docker-compose exec -T web python manage.py collectstatic --noinput; then
-            echo "collectstatic succeeded"
-            break
-          else
-          e  cho "collectstatic failed, retrying in 5 seconds..."
-            sleep 5
-          fi
+          docker-compose exec -T web python manage.py collectstatic --noinput && break || sleep 5
         done
