@@ -12,6 +12,18 @@ jobs:
     - name: Checkout repo
       uses: actions/checkout@v3
       
+    - name: Create .env file
+      run: |
+        echo "SECRET_KEY=${{ secrets.DJANGO_KEY }}" >> backend/.env
+        echo "DEBUG=${{ secrets.DEBUG }}" >> backend/.env
+        echo "ALLOWED_HOSTS=${{ secrets.ALLOWED_HOSTS }}" >> backend/.env
+        echo "EMAIL_HOST=${{ secrets.EMAIL_HOST }}" >> backend/.env
+        echo "EMAIL_PORT=${{ secrets.EMAIL_PORT }}" >> backend/.env
+        echo "EMAIL_USE_TLS=${{ secrets.EMAIL_USE_TLS }}" >> backend/.env
+        echo "EMAIL_HOST_USER=${{ secrets.EMAIL_HOST_USER }}" >> backend/.env
+        echo "EMAIL_HOST_PASSWORD=${{ secrets.EMAIL_HOST_PASSWORD }}" >> backend/.env
+        
+      
     - name: Install docker-compose
       run: |
         sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r .tag_name)/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
