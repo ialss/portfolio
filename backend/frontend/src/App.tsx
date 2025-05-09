@@ -57,7 +57,7 @@ function Main() {
 
                     <div className="mt-8 p-4 lg:pr-90">
 
-                        <p className="text-center lg:text-left font-garamond text-txtGreen text-2xl "> Currently I'm involved in Northeastern Electric Racing and AerospaceNU on Project Horizon.
+                        <p className="text-center lg:text-left font-garamond text-txtGreen text-2xl "> I'm involved in Northeastern Electric Racing and AerospaceNU on Project Horizon.
                             I used to work at United Parcel Service as a package handeler and Friends & Family of Nabeela Syed as a field representative.
                             I've used many different languages and technologies all across the software and hardware spectrum!
                             You can find a full list on my resume or in the projects section. </p>
