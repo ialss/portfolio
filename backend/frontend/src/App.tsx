@@ -38,7 +38,6 @@ function Main() {
                         <div>
 
                             <h1 className=" lg:clamp-heading lg:whitespace-nowrap text-center lg:text-left text-6xl md:text-8xl font-garamond text-txtGreen  font-thin">Hi there! I'm Klaidas Wikar</h1>
-
                         </div>
 
 
@@ -60,7 +59,7 @@ function Main() {
 
                         <p className="text-center lg:text-left font-garamond text-txtGreen text-2xl "> Currently I'm involved in Northeastern Electric Racing and AerospaceNU on Project Horizon.
                             I used to work at United Parcel Service as a package handeler and Friends & Family of Nabeela Syed as a field representative.
-                            I've used many different languages and technologies, some of the more common ones include C/C++, Python, Java, JS/TSX, Docker, and Pytorch.
+                            I've used many different languages and technologies all across the software and hardware spectrum!
                             You can find a full list on my resume or in the projects section. </p>
                         <p className="text-center lg:text-left font-garamond text-txtGreen text-2xl mt-10 max-w-3xl">I'm huge on urbanism and public transit,
                             so you might've seen me in a fourm or some of my wikipedia articles!
@@ -75,12 +74,13 @@ function Main() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="underline font-bold hover:text-green-700"
-                            >Linkedin</a>. </p>
+                            >Linkedin</a>. Please excuse the unfished state of this website! I've recently started summer school in the middle of working on this project so you may find issues with this website or project. I'm more than happy to talk about anything here or anything at all. You can do so via the contact form and email below. </p>
+
                     </div>
 
 
 
-                </div>
+                </div> 
 
                 <div className="">
                     <div className="flex bottom-4 space-x-8 mt-8 lg:mt-40 justify-center lg:justify-normal items-center mb-5 lg:mb-0">
