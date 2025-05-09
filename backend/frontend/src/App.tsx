@@ -58,7 +58,7 @@ function Main() {
 
                         <p className="text-center lg:text-left font-garamond text-txtGreen text-2xl "> I'm involved in Northeastern Electric Racing 
                             and AerospaceNU on Project Horizon (cubesat).
-                            I used to work at United Parcel Service as a package handeler and Friends & Family of Nabeela Syed as a field representative.
+                            I used to work at United Parcel Service as a package handeler and Friends & Family of Nabeela Syed as a field representative (twice!).
                             I've used many different languages and technologies all across the software and hardware spectrum!
                             You can find a full list on my resume or in the projects section. </p>
                         <p className="text-center lg:text-left font-garamond text-txtGreen text-2xl mt-10 max-w-3xl">I'm huge on urbanism and public transit,
@@ -86,7 +86,7 @@ function Main() {
                 </div> 
 
                 <div className="">
-                    <div className="flex bottom-4 space-x-8 mt-8 lg:mt-40 justify-center lg:justify-normal items-center mb-5 lg:mb-0">
+                    <div className="flex bottom-4 space-x-8 mt-8 lg:mt-20 justify-center lg:justify-normal items-center mb-5 lg:mb-0">
 
                         <a href="#projects" className="font-garamond text-txtGreen font-bold text-lg">Projects</a>
 
