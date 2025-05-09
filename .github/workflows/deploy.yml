@@ -1,4 +1,4 @@
-name: CI/CD for Django + React
+name: CI/CD Workflow
 
 on:
   push:
@@ -25,7 +25,7 @@ jobs:
         docker push ${{ secrets.DOCKER_USERNAME }}/portfolio-backend
         docker push ${{ secrets.DOCKER_USERNAME }}/portfolio-frontend
 
-    - name: Deploy to Server via SSH
+    - name: Deploy to Server
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.SERVER_IP }}
@@ -36,3 +36,7 @@ jobs:
           git pull origin main
           docker compose down
           docker compose up -d --build
+          
+    - name: Run collectstatic
+      run: |
+        docker-compose exec -T web python manage.py collectstatic --noinput
