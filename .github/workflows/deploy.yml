@@ -20,7 +20,7 @@ jobs:
 
     - name: Build and push Docker images with docker-compose
       run: |
-        cd ~/portfolio
+        cd portfolio
         
         docker-compose build --no-cache
         docker-compose push
