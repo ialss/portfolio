@@ -28,7 +28,7 @@ function ProjectCard({ project }: ProjectProps) {
             rel="noopener noreferrer"
             className="block h-full">
 
-            <div className="bg-white/50 p-8 rounded-lg shadow-lg w-full justify-center">
+            <div className="bg-white/50 p-8 rounded-lg shadow-lg w-full justify-center h-[450px]">
 
                 <div className="flex ">
                     <img src={icon} className="w-20 h-20 "></img>

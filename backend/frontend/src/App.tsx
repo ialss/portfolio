@@ -119,7 +119,7 @@ function Main() {
             <div id="projects" className="flex justify-center">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 ">
                     {projects.map((project, idx) => (
-                        <ProjectCard key={idx} project={project} />
+                        <ProjectCard key={idx} project={project}  />
                     ))}
                 </div>
             </div>
