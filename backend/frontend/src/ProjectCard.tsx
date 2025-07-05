@@ -43,13 +43,13 @@ function ProjectCard({ project }: ProjectProps) {
 
                 </div>
 
-                <h6 className="text-txtGreen text-xl mt-5"> {blurb} </h6>
+                <h6 className="text-txtGreen text-xl mt-5 mb-5"> {blurb} </h6>
 
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-1">
                     {tech.map((t, i) => (
                         <span
                             key={i}
-                            className=" text-txtGreen text-xs px-2 py-1  border border-gray-300 rounded-lg shadow-sm mt-7"
+                            className=" text-txtGreen text-xs px-2 py-1  border border-gray-300 rounded-lg shadow-sm"
                         >
                             {t}
                         </span>
